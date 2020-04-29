@@ -1,0 +1,17 @@
+
+{%block content%}
+<h1 align="center">Welcome to Home Deepak</h1>
+
+
+{% if user.is_authenticated %}
+<h2 align="center"> You are successfully login as {{user.get_full_name}}</h2>
+
+<h3 align="center"><a href="{% url 'password_change'%}">Change password</a></h3>
+<h5 align="center"><a href="{% url 'logout'%}">Logout</a></h5>
+{%else%}
+<h3 align="center"><a href="{% url 'signin'%}">Login</a></h3>
+<h3 align="center"><a href="{% url 'signup'%}">Register</a></h3>
+
+{%endif%}
+
+{% endblock %}
